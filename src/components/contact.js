@@ -20,6 +20,34 @@ const Contact = () => {
     setFormErrors({ ...formErrors, [e.target.name]: '' });
   };
 
+  const validateForm = () => {
+    let errors = {};
+    let isValid = true;
+
+    if (!name) {
+      errors.name = 'Name is required';
+      isValid = false;
+    }
+
+    if (!email) {
+      errors.email = 'Email is required';
+      isValid = false;
+    } else if (
+      !/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(email)
+    ) {
+      errors.email = 'Please enter a valid email address';
+      isValid = false;
+    }
+
+    if (!message) {
+      errors.message = 'Message is required';
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -37,7 +65,7 @@ const Contact = () => {
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            className={`form-control ${formErrors.name}`}
+            className={`form-control ${formErrors.name ? 'is-invalid' : ''}`}
             id="name"
             name="name"
             value={name}
@@ -51,17 +79,20 @@ const Contact = () => {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            className={`form-control ${formErrors.email}`}
+            className={`form-control ${formErrors.email ? 'is-invalid' : ''}`}
             id="email"
             name="email"
             value={email}
             onChange={handleChange}
           />
+          {formErrors.email && (
+            <div className="invalid-feedback">{formErrors.email}</div>
+          )}
         </div>
         <div className="form-group">
           <label htmlFor="message">Message</label>
           <textarea
-            className={`form-control ${formErrors.message}`}
+            className={`form-control ${formErrors.message ? 'is-invalid' : ''}`}
             id="message"
             name="message"
             value={message}
