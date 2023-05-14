@@ -4,6 +4,7 @@ import About from "./components/about";
 import Portfolio from "./components/portfolio";
 import Contact from "./components/contact";
 import Resume from "./components/resume";
+import Footer from "./components/footer"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       {activeSection === "portfolio" && <Portfolio />}
       {activeSection === "contact" && <Contact />}
       {activeSection === "resume" && <Resume />}
+      <Footer />
     </div>
   );
 }
