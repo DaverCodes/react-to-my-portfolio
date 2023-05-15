@@ -1,38 +1,63 @@
-.App {
+/* Color Roots */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --tertiary-color: #2d303e;
+  --text-color: #333333;
+  --background-color: #f9f9f9;
+  --fourtuary-color: #fff;
+}
+
+/* Global Styles */
+body {
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Navigation Styles */
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--fourtuary-color);
+}
+
+/* Button Styles */
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--fourtuary-color);
+}
+
+.btn:hover {
+  background-color: var(--tertiary-color);
+}
+
+/* Form Styles */
+.form-control {
+  border: 1px solid var(--tertiary-color);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--secondary-color);
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--fourtuary-color);
   text-align: center;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer a {
+  color: var(--fourtuary-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
