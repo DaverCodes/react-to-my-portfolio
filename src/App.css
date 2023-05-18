@@ -1,63 +1,204 @@
-/* Color Roots */
+/* app.css */
+
 :root {
-  --primary-color: #4361ee;
-  --secondary-color: #3f37c9;
-  --tertiary-color: #2d303e;
-  --text-color: #333333;
-  --background-color: #f9f9f9;
-  --fourtuary-color: #fff;
+  --background-color: #f2f2f2;
+  --primary-color: #333;
+  --secondary-color: #666;
+  --text-color: #fff;
+  --border-color: #ddd;
+  --error-color: red;
 }
 
-/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-size: 16px;
-  color: var(--text-color);
+  font-family: Arial, sans-serif;
   background-color: var(--background-color);
 }
 
-/* Navigation Styles */
-.navbar {
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--primary-color);
+  padding: 20px;
+  color: var(--text-color);
 }
 
-.navbar-brand,
-.nav-link {
-  color: var(--fourtuary-color);
+h1 {
+  font-size: 24px;
 }
 
-/* Button Styles */
-.btn {
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+nav button.active {
   background-color: var(--secondary-color);
-  color: var(--fourtuary-color);
 }
 
-.btn:hover {
-  background-color: var(--tertiary-color);
+section {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
-.form-control {
-  border: 1px solid var(--tertiary-color);
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.form-control:focus {
-  box-shadow: none;
-  border-color: var(--secondary-color);
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.form-label {
+.project {
+  flex: 0 0 calc(33.33% - 20px);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.container.mt-5 {
+  margin-top: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
   font-weight: bold;
 }
 
-/* Footer Styles */
-.footer {
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.invalid-feedback {
+  color: var(--error-color);
+}
+
+button {
   background-color: var(--primary-color);
-  color: var(--fourtuary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px;
   text-align: center;
-  padding: 1rem;
 }
 
-.footer a {
-  color: var(--fourtuary-color);
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+@keyframes slideIn {
+ 
+
+ from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+header {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+section {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.project {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+button {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+footer {
+  animation: fadeIn 0.5s ease-in-out;
+}

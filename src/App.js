@@ -1,10 +1,12 @@
+import './App.css';
 import React, { useState } from "react";
 import Header from "./components/header";
 import About from "./components/about";
 import Portfolio from "./components/portfolio";
 import Contact from "./components/contact";
 import Resume from "./components/resume";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
+
 
 
 function App() {
