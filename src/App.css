@@ -4,7 +4,7 @@
   --primary-color: #333;
   --secondary-color: #666;
   --text-color: white;
-  --header-text-color: blue;
+  --header-text-color: teal;
   --border-color: #ddd;
   --error-color: red;
 }
@@ -14,6 +14,17 @@
   margin: 0;
   padding: 0;
 }
+
+.project-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.project-links a.deployed {
+  color: #fff; /* Change to white */
+  text-decoration: none;
+}
+
 
 body {
   font-family: Arial, sans-serif;
